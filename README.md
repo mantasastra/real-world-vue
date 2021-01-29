@@ -1,4 +1,6 @@
-# real-world-vue2
+# Real World Vue
+
+A simple application that utilises VueJS framework for building an application.
 
 ## Project setup
 ```
