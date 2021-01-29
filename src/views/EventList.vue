@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Event Listing</h1>
+    <event-card />
     <p>
       <router-link :to="{ name: 'event-show', params: { id: '1' } }"
         >First Event</router-link
@@ -10,8 +11,13 @@
 </template>
 
 <script>
+import EventCard from '@/components/EventCard'
+
 export default {
-  name: 'EventList'
+  name: 'EventList',
+  components: {
+    EventCard
+  }
 }
 </script>
 
