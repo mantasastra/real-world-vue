@@ -1,5 +1,7 @@
 import EventService from '@/services/EventService'
 
+export const namespaced = true
+
 export const state = {
   event: {},
   events: [],
