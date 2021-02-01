@@ -16,12 +16,16 @@ export default new Vuex.Store({
       'food',
       'community'
     ],
+    event: {},
     events: [],
     eventsTotal: 0
   },
   mutations: {
     ADD_EVENT(state, event) {
       state.events.push(event)
+    },
+    SET_EVENT(state, event) {
+      state.event = event
     },
     SET_EVENTS(state, events) {
       state.events = events
@@ -35,6 +39,26 @@ export default new Vuex.Store({
       EventService.postEvent(event).then(() => {
         commit('ADD_EVENT', event)
       })
+    },
+    fetchEvent({ commit, getters }, id) {
+      const event = getters.getEventById(id)
+
+      if (event) {
+        commit('SET_EVENT', event)
+      } else {
+        EventService.getEvent(id)
+          .then(res => {
+            commit('SET_EVENT', res.data)
+          })
+          .catch(err => {
+            console.error(
+              `An error occurred while trying to fetch an event with ID:${id}`,
+              {
+                error: err.response
+              }
+            )
+          })
+      }
     },
     fetchEvents({ commit }, { perPage, page }) {
       EventService.getEvents(perPage, page)
