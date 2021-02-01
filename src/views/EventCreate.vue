@@ -108,7 +108,7 @@ export default {
         })
         .catch(err => {
           console.error('An error occurred while creating an event', {
-            error: err.message
+            error: err.response
           })
         })
     }
