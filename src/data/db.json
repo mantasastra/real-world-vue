@@ -71,6 +71,20 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 5215468,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "John Wick"
+      },
+      "title": "Save the Nature",
+      "description": "This event is for saving our beautiful nature!",
+      "location": "New York, New York",
+      "date": "2021-03-17T06:18:00.000Z",
+      "time": "11:00",
+      "attendees": []
     }
   ]
 }
