@@ -10,6 +10,7 @@ const routes = [
   {
     path: '/',
     name: 'event-list',
+    props: true,
     component: EventList
   },
   {
