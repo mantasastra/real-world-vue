@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import BaseIcon from '@/components/BaseIcon'
 
+import 'nprogress/nprogress.css'
+
 Vue.config.productionTip = false
 Vue.component('BaseIcon', BaseIcon)
 
