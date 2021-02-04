@@ -51,10 +51,14 @@ export const actions = {
 
     if (event) {
       commit('SET_EVENT', event)
+
+      return event
     } else {
       return EventService.getEvent(id)
         .then(res => {
           commit('SET_EVENT', res.data)
+
+          return res.data
         })
         .catch(err => {
           const notification = {

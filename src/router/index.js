@@ -25,7 +25,8 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "eventShow" */ '@/views/EventShow'),
     beforeEnter(routeTo, routeFrom, next) {
-      store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+      store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
+        routeTo.params.event = event
         next()
       })
     }
