@@ -41,14 +41,15 @@
           placeholder="Select a date"
         />
       </div>
-      <div class="field">
-        <label for="time">Select a time</label>
-        <select name="time" id="time" v-model="event.time">
-          <option v-for="time in times" :key="time">{{ time }}</option>
-        </select>
-      </div>
+      <base-select
+        label="Select a time"
+        v-model="event.time"
+        :options="times"
+      />
 
-      <input type="submit" class="button -fill-gradient" value="Submit" />
+      <base-button type="submit" buttonClass="-fill-gradient"
+        >Submit</base-button
+      >
     </form>
   </div>
 </template>
