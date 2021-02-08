@@ -3,8 +3,8 @@
     <form @submit.prevent="createEvent">
       <base-select
         label="Select a category"
-        v-model="event.category"
         :options="categories"
+        v-model="event.category"
         :class="{ error: $v.event.category.$error }"
         @blur="$v.event.category.$touch()"
       />
@@ -122,9 +122,9 @@ export default {
     }
 
     return {
-      event: this.createFreshEventObject(),
+      times,
       categories: this.$store.state.categories,
-      times
+      event: this.createFreshEventObject()
     }
   },
   validations: {

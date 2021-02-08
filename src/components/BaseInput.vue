@@ -6,11 +6,12 @@
 </template>
 
 <script>
+import { formFieldMixin } from '@/mixins/formFieldMixin'
+
 export default {
   name: 'BaseInput',
-  inheritAttrs: false,
+  mixins: [formFieldMixin],
   props: {
-    label: String,
     value: [String, Number]
   },
   computed: {
@@ -19,11 +20,6 @@ export default {
         ...this.$listeners,
         input: this.updateValue
       }
-    }
-  },
-  methods: {
-    updateValue(event) {
-      this.$emit('input', event.target.value)
     }
   }
 }
